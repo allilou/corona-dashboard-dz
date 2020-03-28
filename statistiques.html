@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Statistiques COVID-19 DZ</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        canvas {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <table style="width:100%">
+        <tr>
+            <td width="50%" rowspan="2">
+                    <div id="stats_cases"></div>
+            </td>
+            <td width="50%">
+                    <canvas id="graph-cumul" height="150"></canvas>
+            </td>
+        </tr>
+        <tr>
+            <td width="50%">
+                    <canvas id="graph-new" height="150"></canvas>
+            </td>
+        </tr>
+    </table>
+
+    <script src="./assets/js/Chart.min.js" type="text/javascript"></script>
+
+    <script src="./assets/js/fetch-arcgis-dashboard-mprsh-stats.js" type="text/javascript"></script>
+
+</body>
+
+</html>
