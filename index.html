@@ -3,7 +3,7 @@
 
 <head>
 
-	<title>GeoJSON - Leaflet</title>
+	<title>Dashboard COVID-19 DZ</title>
 
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,19 +51,33 @@
 
 <body>
 
-	<div id='map'></div>
+	<table style="width:100%">
+		<tr>
+			<td width="60%">
+				<div id='map'></div>
+			</td>
+			<td width="40%">
+				ddd
+			</td>
+		</tr>
+	
+		<tr>
+			<td colspan="2">
+				<div id='details'></div>
+			</td>
+		</tr>	
 
-	<div id='details'></div>
+	</table>
 
 	<script src="./assets/data/cities.js" type="text/javascript"></script>
 
 	<script src="./assets/data/wilaya.js" type="text/javascript"></script>
 
-	<script src="fetch-arcgis-dashboard-mprsh.js" type="text/javascript"></script>
+	<script src="./assets/js/fetch-arcgis-dashboard-mprsh.js" type="text/javascript"></script>
 
-	<script src="map-covid-19.js" type="text/javascript"></script>
+	<script src="./assets/js/map-covid-19.js" type="text/javascript"></script>
 
-	<script src="table-covid-19.js" type="text/javascript"></script>
+	<script src="./assets/js/table-covid-19.js" type="text/javascript"></script>
 
 
 </body>
