@@ -16,27 +16,31 @@ function updateMapView(obj) {
         let wilayaData = getWilayaData(wilaya.features[i].properties.num);
         wilaya.features[i].properties.infected = wilayaData.Cas_confirm ;
         if (wilayaData.Cas_confirm == 0) {
-            wilaya.features[i].properties.fill = "#CFF8EE" ;
+            wilaya.features[i].properties.fill = "#DAE5F0" ;
             wilaya.features[i].properties.fillOpacity = 0.0 ;    
         }
-        else if (wilayaData.Cas_confirm > 0 && wilayaData.Cas_confirm <= 2) {
-            wilaya.features[i].properties.fill = "#E9F0F9" ;
+        else if (wilayaData.Cas_confirm > 0 && wilayaData.Cas_confirm < 10) {
+            wilaya.features[i].properties.fill = "#D3DEEA" ;
             wilaya.features[i].properties.fillOpacity = 0.7 ;    
         }
-        else if (wilayaData.Cas_confirm > 2 && wilayaData.Cas_confirm <= 10) {
-            wilaya.features[i].properties.fill = "#BACCE3" ;
+        else if (wilayaData.Cas_confirm >= 10 && wilayaData.Cas_confirm < 30) {
+            wilaya.features[i].properties.fill = "#82A0BF" ;
             wilaya.features[i].properties.fillOpacity = 0.7 ;    
         }
-        else if (wilayaData.Cas_confirm > 10 && wilayaData.Cas_confirm <= 50) {
-            wilaya.features[i].properties.fill = "#89A8D0" ;
+        else if (wilayaData.Cas_confirm >= 30 && wilayaData.Cas_confirm < 50) {
+            wilaya.features[i].properties.fill = "#6083A7" ;
             wilaya.features[i].properties.fillOpacity = 0.7 ;    
         }
-        else if (wilayaData.Cas_confirm > 50 && wilayaData.Cas_confirm <= 100) {
-            wilaya.features[i].properties.fill = "#123D72" ;
+        else if (wilayaData.Cas_confirm >= 50 && wilayaData.Cas_confirm < 100) {
+            wilaya.features[i].properties.fill = "#426890" ;
             wilaya.features[i].properties.fillOpacity = 0.7 ;    
         }
-        else if (wilayaData.Cas_confirm > 100) {
-            wilaya.features[i].properties.fill = "#051D3B" ;
+        else if (wilayaData.Cas_confirm >= 100 && wilayaData.Cas_confirm < 300) {
+            wilaya.features[i].properties.fill = "#264C74" ;
+            wilaya.features[i].properties.fillOpacity = 0.7 ;    
+        }
+        else if (wilayaData.Cas_confirm >= 300) {
+            wilaya.features[i].properties.fill = "#0B2949" ;
             wilaya.features[i].properties.fillOpacity = 0.7 ;    
         }
 
@@ -142,20 +146,23 @@ function updateMapView(obj) {
         if (infectedCount== 0) {
             return 0;
         }
-        else if (infectedCount> 0 && infectedCount<= 2) {   
+        else if (infectedCount> 0 && infectedCount<= 10) {   
             return 2
         }
-        else if (infectedCount> 2 && infectedCount<= 10) {
+        else if (infectedCount>= 10 && infectedCount< 30) {
             return 5;
         }
-        else if (infectedCount> 10 && infectedCount<= 50) {
+        else if (infectedCount>= 30 && infectedCount< 50) {
             return 10;
         }
         else if (infectedCount> 50 && infectedCount<= 100) {
             return 20;
         }
-        else if (infectedCount > 100) {
+        else if (infectedCount> 100 && infectedCount<= 300) {
             return 30;
+        }
+        else if (infectedCount > 100) {
+            return 40;
         }
     }
 
@@ -166,7 +173,7 @@ function updateMapView(obj) {
         pointToLayer: function (feature, latlng) {
             return L.circleMarker(latlng, {
                 radius: getVilleSymbolWeight(feature.properties.infected), //feature.properties.infected,
-                fillColor: "#2FEA5F",
+                fillColor: "#D0E522",
                 color: "#000",
                 weight: feature.properties.infected == 0 ? 0 : 1,
                 opacity: feature.properties.infected == 0 ? 0 : 1,
@@ -187,8 +194,8 @@ function updateMapView(obj) {
     };
 
     var overlays = {
-        "Wilaya": layerWilaya,
-        "Villes": layerVilles
+        "Villes": layerVilles,
+        "Wilaya": layerWilaya
     };
 
     var map = L.map('map', { layers: [layerWilaya] }).setView([28.0, 3.0], 5);

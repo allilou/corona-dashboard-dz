@@ -16,8 +16,8 @@ var stats_cumul_death_guerie = 'https://services8.arcgis.com/yhz7DEAMzdabE4ro/ar
  * API REST du Dashboard du ministère de la santé 
  **/
 
-var cumul_global = 'https://services8.arcgis.com/yhz7DEAMzdabE4ro/arcgis/rest/services/DZ_COVID/FeatureServer/2/query?f=json&where=1%3D1&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&orderByFields=Report%20asc&outSR=102100&resultOffset=0&resultRecordCount=1000&cacheHint=true';
-
+var cumul_global1 = 'https://services8.arcgis.com/yhz7DEAMzdabE4ro/arcgis/rest/services/DZ_COVID/FeatureServer/2/query?f=json&where=1%3D1&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&orderByFields=Report%20asc&outSR=102100&resultOffset=0&resultRecordCount=1000&cacheHint=true';
+var cumul_global  = 'https://services8.arcgis.com/yhz7DEAMzdabE4ro/arcgis/rest/services/COVID_Death_Cumul/FeatureServer/2/query?f=json&where=1%3D1&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&orderByFields=Report%20asc&outSR=102100&resultOffset=0&resultRecordCount=1000&cacheHint=true'
 
 var xmlhttpCovidCases = new XMLHttpRequest();
 xmlhttpCovidCases.onreadystatechange = function () {
