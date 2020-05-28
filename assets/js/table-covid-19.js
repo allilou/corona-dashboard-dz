@@ -11,12 +11,6 @@ function featuresToHTMLTable(obj) {
     <th>wilayat </th> \
     <th>Cas_confirm </th> \
     <th>Décés </th> \
-    <th>Récupér </th> \
-    <th>active </th> \
-    <th>Femelle </th> \
-    <th>Males </th> \
-    <th>Imported </th> \
-    <th>Local </th> \
     <th>A1_25 </th> \
     <th>a25_34 </th> \
     <th>a35_44 </th> \
@@ -31,12 +25,6 @@ function featuresToHTMLTable(obj) {
         + '<td>' + features[i].attributes["wilayat"] + '</td>'
         + '<td>' + features[i].attributes["Cas_confirm"] + '</td>'
         + '<td>' + features[i].attributes["Décés"] + '</td>'
-        + '<td>' + features[i].attributes["Récupér"] + '</td>'
-        + '<td>' + features[i].attributes["active"] + '</td>'
-        + '<td>' + features[i].attributes["Femelle"] + '</td>'
-        + '<td>' + features[i].attributes["Males"] + '</td>'
-        + '<td>' + features[i].attributes["Imported"] + '</td>'
-        + '<td>' + features[i].attributes["Local"] + '</td>'
         + '<td>' + features[i].attributes["A1_25"] + '</td>'
         + '<td>' + features[i].attributes["a25_34"] + '</td>'
         + '<td>' + features[i].attributes["a35_44"] + '</td>'

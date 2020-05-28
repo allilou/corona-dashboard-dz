@@ -17,14 +17,18 @@ function updateMapView(obj) {
 
     function getWilayaData(wilayaID) {
         for (let ii = 0; ii < mapFeatures.length; ii++) {
-            if (mapFeatures[ii].attributes.WILAYA == wilayaID)
+            if (mapFeatures[ii].attributes.WILAYA == wilayaID) {
                 return mapFeatures[ii].attributes;
+            }
         }
     }
 
     // Updating Wilaya Layer from MSRHP Dashboard
     for (let i = 0; i < wilaya.features.length; i++) {
-        let wilayaData = getWilayaData(wilaya.features[i].properties.num);
+        let wilayaData = getWilayaData(wilaya.features[i].properties.num); 
+
+        if (typeof wilayaData === 'undefined')   continue;
+
         wilaya.features[i].properties.infected = wilayaData.Cas_confirm ;
         wilaya.features[i].properties.fill = getColor(wilayaData.Cas_confirm);
         wilaya.features[i].properties.fillOpacity = wilayaData.Cas_confirm == 0 ? 0.0 : 0.7;     
@@ -40,6 +44,7 @@ function updateMapView(obj) {
     // Updating Cities Layer from MSRHP Dashboard
     for (let i = 0; i < villes.features.length; i++) {
         let wilayaData = getWilayaData(villes.features[i].properties.num);
+        if (typeof wilayaData === 'undefined')   continue;
         villes.features[i].properties.infected = wilayaData.Cas_confirm ;
     }
 
